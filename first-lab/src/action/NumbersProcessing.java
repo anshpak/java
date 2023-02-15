@@ -1,9 +1,9 @@
-package Action;
-import Numbers.Numbers;
+package action;
+import numbers.IntegerNumbers;
 
 public class NumbersProcessing {
-    public Numbers getDividedIntoThree(Numbers nums){
-        Numbers res = new Numbers();
+    public IntegerNumbers getDividedIntoThree(IntegerNumbers nums){
+        IntegerNumbers res = new IntegerNumbers();
         String strRes = new String("");
         String[] numbers = nums.getNumericalSequence().split(" ");
         for (String num : numbers) {

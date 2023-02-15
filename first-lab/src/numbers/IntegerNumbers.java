@@ -1,6 +1,6 @@
-package Numbers;
+package numbers;
 
-public class Numbers {
+public class IntegerNumbers {
     private String numericalSequence;
     public String getNumericalSequence(){
         return numericalSequence;
