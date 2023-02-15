@@ -1,4 +1,4 @@
-package action;
+package actions;
 import numbers.IntegerNumbers;
 
 public class NumbersProcessing {
@@ -8,7 +8,7 @@ public class NumbersProcessing {
         String[] numbers = nums.getNumericalSequence().split(" ");
         for (String num : numbers) {
             if(Integer.parseInt(num) % 3 == 0 || Integer.parseInt(num) % 9 == 0){
-                strRes += num;
+                strRes += num + " ";
             }
         }
         res.setNumericalSequence(strRes);
