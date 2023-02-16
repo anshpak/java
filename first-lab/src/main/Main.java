@@ -7,7 +7,7 @@ import javax.swing.*;
 public class Main {
     public static void main(String[] args) {
         String strNums;
-        strNums = JOptionPane.showInputDialog("Please, enter the sequence of Integer nums: ");
+        strNums = JOptionPane.showInputDialog("Please, enter the sequence of Integer nums with only spaces between: ");
         IntegerNumbers nums = new IntegerNumbers();
         nums.setNumericalSequence(strNums);
         IntegerNumbers numsDividedIntoThreeNine;
