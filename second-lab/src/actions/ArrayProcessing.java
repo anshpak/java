@@ -11,4 +11,15 @@ public class ArrayProcessing {
         }
         return minIndex;
     }
+
+    public boolean isSeddlePoint(int[][] array, int rowIndex, int colIndex){
+        int n = array.length;
+        int maxTmpIndex = 0;
+        for(int i = 0; i < n; i++){
+            if(array[i][colIndex] > array[maxTmpIndex][colIndex]){
+                maxTmpIndex = i;
+            }
+        }
+        return maxTmpIndex == rowIndex;
+    }
 }
