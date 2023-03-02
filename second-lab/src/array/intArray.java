@@ -6,7 +6,7 @@ import java.util.Scanner;
 public class intArray {
     private int rows;
     private int cols;
-    private final int[][] values = new int[rows][cols];
+    private int[][] values;
 
     public void setCols(int cols) {
         this.cols = cols;
@@ -25,10 +25,11 @@ public class intArray {
     }
 
     public void setValues(FileInputStream valuesFileIn) {
+        values = new int[rows][cols];
         Scanner scanValues = new Scanner(valuesFileIn);
         for(int i = 0; i < this.getRows(); i++){
             for(int j = 0; j < this.getCols(); j++){
-                this.values[i][j] = scanValues.nextInt();
+                values[i][j] = scanValues.nextInt();
             }
         }
     }

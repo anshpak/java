@@ -7,46 +7,35 @@ import array.intArray;
 
 public class Main {
     public static void main(String[] args) throws IOException{
-        /*int [][]testArr1 = {
-                {2,3,2,6,2,4},
-                {1,2,0,0,1,1},
-                {2,6,2,3,2,7},
-                {0,5,1,7,1,4}};*/
 
         ArrayProcessing action = new ArrayProcessing();
 
         FileInputStream sizeFileIn = new FileInputStream("src/files/sizes.txt");
 
+        intArray myArr = new intArray();
+
         Scanner scanSizes = new Scanner(sizeFileIn);
-        int n = scanSizes.nextInt();
-        int m = scanSizes.nextInt();
+        myArr.setRows(scanSizes.nextInt());
+        myArr.setCols(scanSizes.nextInt());
         sizeFileIn.close();
 
-        int myArr[][] = new int[n][m];
-
         FileInputStream valuesFileIn = new FileInputStream("src/files/values.txt");
-
-        Scanner scanValues = new Scanner(valuesFileIn);
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                myArr[i][j] = scanValues.nextInt();
-            }
-        }
+        myArr.setValues(valuesFileIn);
         valuesFileIn.close();
 
-        for(int i = 0; i < n; i++){
-            for(int j = 0; j < m; j++){
-                System.out.print(myArr[i][j] + "  ");
+        for(int i = 0; i < myArr.getRows(); i++){
+            for(int j = 0; j < myArr.getCols(); j++){
+                System.out.print(myArr.getValues()[i][j] + "  ");
             }
             System.out.println();
         }
 
         int count = 0;
-        for(int i = 0; i < n; i++){
-            int minIndex = action.getMinIndex(myArr[i]);
-            for (int j = 0; j < m; j++){
-                if(myArr[i][j] == myArr[i][minIndex]){
-                    if(action.isSeddlePoint(myArr, i, j)){
+        for(int i = 0; i < myArr.getRows(); i++){
+            int minIndex = action.getMinIndex(myArr.getValues()[i]);
+            for (int j = 0; j < myArr.getCols(); j++){
+                if(myArr.getValues()[i][j] == myArr.getValues()[i][minIndex]){
+                    if(action.isSeddlePoint(myArr.getValues(), i, j)){
                         count++;
                     }
                 }
