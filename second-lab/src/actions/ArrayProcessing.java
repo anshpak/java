@@ -20,6 +20,6 @@ public class ArrayProcessing {
                 maxTmpIndex = i;
             }
         }
-        return maxTmpIndex == rowIndex;
+        return array[maxTmpIndex][colIndex] == array[rowIndex][colIndex];
     }
 }
