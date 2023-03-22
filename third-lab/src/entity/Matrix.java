@@ -1,9 +1,9 @@
 package entity;
 
-public class BoolMatrix {
+public class Matrix {
     private byte[][] matrix;
 
-    public BoolMatrix(byte[][] matrix){
+    public Matrix(byte[][] matrix){
         this.matrix = matrix;
     }
 
