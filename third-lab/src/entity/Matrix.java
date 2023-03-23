@@ -1,4 +1,5 @@
 package entity;
+
 import exception.MatrixException;
 
 public class Matrix {

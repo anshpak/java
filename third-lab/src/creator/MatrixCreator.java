@@ -1,4 +1,5 @@
 package creator;
+
 import entity.Matrix;
 import exception.MatrixException;
 public class MatrixCreator {

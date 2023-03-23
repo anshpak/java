@@ -1,8 +1,9 @@
 package main;
+
 import entity.Matrix;
 import exception.MatrixException;
 import creator.MatrixCreator;
-import action.Logical;
+import action.*;
 
 public class Main {
     public static void main(String[] args) throws MatrixException {
@@ -16,6 +17,8 @@ public class Main {
         creator.fillRandomized(boolMatrix1, minValue, maxValue);
         creator.fillRandomized(boolMatrix2, minValue, maxValue);
         Logical logical = new Logical();
+        Count count = new Count();
+        Sort sort = new Sort();
         System.out.print("First one:");
         System.out.print(boolMatrix1);
         System.out.print("Second one:");
@@ -29,6 +32,12 @@ public class Main {
         System.out.print(resultMatrix);
         System.out.print("NOT:");
         resultMatrix = logical.NOT(resultMatrix);
+        System.out.print(resultMatrix);
+        System.out.print("Amount of ones: ");
+        int onesAmount = count.getOnesAmount(resultMatrix);
+        System.out.print(onesAmount);
+        System.out.print("\nSorted: ");
+        resultMatrix = sort.lexicographicalSort(resultMatrix);
         System.out.print(resultMatrix);
     }
 }
