@@ -25,11 +25,11 @@ public class Sort {
 
         for (int i = 0; i < v; i++) {
             int max = Collections.max(dcmls);
-            int k = dcmls.indexOf(max);
+            int k = dcmls.indexOf(max) ;
             for (int j = 0; j < h; j++) {
                 resultMatrix.setElement(i, j, boolMatrix.getElement(k, j));
             }
-            dcmls.remove(k);
+            dcmls.set(k, -1);
         }
         return resultMatrix;
     }
