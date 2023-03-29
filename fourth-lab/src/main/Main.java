@@ -11,6 +11,7 @@ public class Main {
         // Fraction errorFrac = new Fraction(1, 0);
         // Pointless use of the class example
         //Fraction errorFrac = new Fraction(0, 0);
-        Fraction fraction = new Fraction(15, 1);
+        Fraction fraction = new Fraction(156384, 1242648);
+        System.out.print(fraction);
     }
 }

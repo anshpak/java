@@ -15,7 +15,7 @@ public class Fraction extends Number{
         } else {
             throw new FractionException("Division by zero.");
         }
-
+        reduceFractionCall();
     }
 
     private boolean checkDenomenator(int denomerator){
@@ -25,17 +25,28 @@ public class Fraction extends Number{
         return true;
     }
 
-    private Fraction reduceFraction(int numerator, int denomerator) {
+    private void reduceFractionCall() {
         ArrayList<Integer> numMultipliers = getMultipliers(numerator);
         ArrayList<Integer> denomMultipliers = getMultipliers(denomerator);
-        for (int multiplier: numMultipliers) {
-            if(denomMultipliers.contains(multiplier)) {
-                numerator /= multiplier;
-                denomerator /= multiplier;
-                denomMultipliers.remove(multiplier);
+        if(numMultipliers.size() == denomMultipliers.size()) {
+
+        } else if (numMultipliers.size() > denomMultipliers.size()) {
+            reduceFraction(numMultipliers, denomMultipliers);
+        } else {
+            reduceFraction(denomMultipliers, numMultipliers);
+        }
+
+
+    }
+
+    private void reduceFraction(ArrayList<Integer> l1, ArrayList<Integer> l2) {
+        for (int i = 0; i < l1.size(); i++) {
+            if(l2.contains(l1.get(i))) {
+                numerator /= l1.get(i);
+                denomerator /= l1.get(i);
+                l2.set(i, -1);
             }
         }
-        return null;
     }
 
     private ArrayList<Integer> getMultipliers(int number) {
@@ -81,5 +92,12 @@ public class Fraction extends Number{
     @Override
     public double doubleValue() {
         return 0;
+    }
+
+    @Override
+    public String toString() {
+        final String BLANK = " ";
+        StringBuilder s = new StringBuilder("\n" + numerator + "\n---\n" + denomerator + "\n");
+        return s.toString();
     }
 }
