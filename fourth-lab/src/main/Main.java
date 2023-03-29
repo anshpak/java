@@ -15,6 +15,9 @@ public class Main {
         Fraction fraction1 = new Fraction(156384, 1242648);
         Fraction fraction2 = new Fraction(11, 57);
         Fraction fraction3 = new Fraction(2, 523);
+        Fraction fraction4 = new Fraction(2, 120);
+        Fraction fraction5 = new Fraction(1, 12);
+        Fraction fraction6 = new Fraction(7, 120);
         int num1 = 523;
         int num2 = 11;
         int num3 = 2;
@@ -30,5 +33,11 @@ public class Main {
         System.out.print("\n\nDivision fraction by fraction:\n" + fraction1 + " / " + fraction3 + " = " + operations.divide(fraction1, fraction3));
         // Division by zero example
         // operations.divide(fraction1, 0);
+        System.out.print("\n\nAddition fraction by number:\n" + fraction4 + " + " + num1 + " = " + operations.add(fraction4, num1));
+        System.out.print("\n\nAddition number by fraction:\n" + num2 + " + " + fraction5 + " = " + operations.add(num2, fraction5));
+        System.out.print("\n\nAddition fraction by fraction:\n" + fraction5 + " + " + fraction2 + " = " + operations.add(fraction5, fraction2));
+        System.out.print("\n\nSubtraction fraction by number:\n" + fraction6 + " - " + num3 + " = " + operations.subtract(fraction6, num3));
+        System.out.print("\n\nSubtraction number by fraction:\n" + num1 + " - " + fraction1 + " = " + operations.subtract(num1, fraction1));
+        System.out.print("\n\nSubtraction fraction by fraction:\n" + fraction6 + " - " + fraction4 + " = " + operations.subtract(fraction6, fraction4));
     }
 }
