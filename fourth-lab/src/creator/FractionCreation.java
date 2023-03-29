@@ -2,11 +2,13 @@ package creator;
 
 import entity.Fraction;
 import java.util.ArrayList;
+import crypto.Algorithms;
 
 public class FractionCreation {
     public void reduceFractionCall(Fraction fraction) {
-        ArrayList<Integer> numMultipliers = getMultipliers(fraction.getNumerator());
-        ArrayList<Integer> denomMultipliers = getMultipliers(fraction.getDenominator());
+        Algorithms algorithm = new Algorithms();
+        ArrayList<Integer> numMultipliers = algorithm.factorisation(fraction.getNumerator());
+        ArrayList<Integer> denomMultipliers = algorithm.factorisation(fraction.getDenominator());
         if(numMultipliers.size() == denomMultipliers.size()) {
 
         } else if (numMultipliers.size() > denomMultipliers.size()) {
@@ -24,22 +26,5 @@ public class FractionCreation {
                 l2.set(i, -1);
             }
         }
-    }
-
-    private ArrayList<Integer> getMultipliers(int number) {
-        ArrayList<Integer> multipliers = new ArrayList<Integer>();
-        while(number % 2 == 0) {
-            multipliers.add(2);
-            number = number / 2;
-        }
-        for(int i = 3; i * i <= number; i += 2) {
-            if(number % i == 0) {
-                multipliers.add(i);
-                number = number / i;
-                i = 3;
-            }
-        }
-        multipliers.add(number);
-        return multipliers;
     }
 }
