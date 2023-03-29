@@ -1,19 +1,29 @@
 package entity;
+import exception.FractionException;
 
-public class Fraction <T1 extends Number, T2 extends Number> extends Number{
-    private T1 numerator;
-    private T2 denomerator;
+public class Fraction extends Number{
+    private int numerator;
+    private int denomerator;
+    public Fraction(int numerator, int denomerator) throws FractionException{
+        if (checkDenomenator(denomerator)) {
+            this.numerator = numerator;
+            this.denomerator = denomerator;
+        }
 
-    public Fraction(T1 numerator, T2 denomerator){
-        this.numerator = numerator;
-        this.denomerator = denomerator;
     }
 
-    public T1 getNumerator() {
+    private boolean checkDenomenator(int denomerator){
+        if((denomerator == 0)) {
+            return false;
+        }
+        return true;
+    }
+
+    public int getNumerator() {
         return numerator;
     }
 
-    public T2 getDenomerator() {
+    public int getDenomerator() {
         return denomerator;
     }
 
