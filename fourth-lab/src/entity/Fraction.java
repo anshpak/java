@@ -65,7 +65,7 @@ public class Fraction extends Number{
     @Override
     public String toString() {
         final String BLANK = " ";
-        StringBuilder s = new StringBuilder("\n" + numerator + "\n---\n" + denominator + "\n");
+        StringBuilder s = new StringBuilder(numerator + "/" + denominator);
         return s.toString();
     }
 }
