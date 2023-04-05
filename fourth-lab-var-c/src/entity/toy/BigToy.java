@@ -1,9 +1,10 @@
 package entity.toy;
 
-public class BigToy extends AbstractToy {
+public class BigToy <K extends AbstractToy> {
     private final Size size = Size.valueOf("Big".toUpperCase());
 
-    public BigToy (AbstractToy toy) {
-        super(toy.getName(), toy.getPrice());
+    K toy;
+    public BigToy (K toy) {
+        this.toy = toy;
     }
 }
