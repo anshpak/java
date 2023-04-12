@@ -1,10 +1,13 @@
 package entity.toy;
 
-public class SmallToy <K extends AbstractToy> {
+public class SmallToy extends Doll {
     private final Size size = Size.valueOf("Small".toUpperCase());
-    K toy;
 
-    public SmallToy (K toy) {
-        this.toy = toy;
+    public SmallToy(String name, int price, String sex) {
+        super(name, price, sex);
+    }
+
+    public Size getSize() {
+        return size;
     }
 }

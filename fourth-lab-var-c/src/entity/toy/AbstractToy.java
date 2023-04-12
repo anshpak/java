@@ -1,6 +1,6 @@
 package entity.toy;
 
-public abstract class AbstractToy {
+public class AbstractToy {
     private String name;
     private int price;
 
@@ -15,5 +15,10 @@ public abstract class AbstractToy {
 
     public int getPrice() {
         return price;
+    }
+
+    public void setToy(AbstractToy toy) {
+        this.name = toy.getName();
+        this.price = toy.getPrice();
     }
 }

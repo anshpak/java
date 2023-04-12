@@ -7,4 +7,8 @@ public class Cube extends AbstractToy{
         super(name, price);
         this.color = color;
     }
+
+    public String getColor() {
+        return color;
+    }
 }

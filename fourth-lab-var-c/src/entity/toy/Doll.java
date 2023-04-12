@@ -8,6 +8,10 @@ public class Doll extends AbstractToy{
         this.sex = Sex.valueOf(sex.toUpperCase());
     }
 
+    public Sex getSex() {
+        return sex;
+    }
+
     public enum Sex {
         MALE, FEMALE
     }

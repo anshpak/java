@@ -8,6 +8,10 @@ public class Ball extends AbstractToy{
         this.type = Ball.Type.valueOf(type.toUpperCase());
     }
 
+    public Type getType() {
+        return type;
+    }
+
     public enum Type {
         FOOTBALL, VOLLEYBALL, BASKETBALL
     }
