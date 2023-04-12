@@ -16,7 +16,5 @@ public interface ProductAction {
     public String getShelfLife();
     public int getAmount();
     public void moveToStorage();
-    public void moveToShoppingRoom();
-    public void buyProduct();
-    public void removeProduct();
+    public void moveToHall();
 }
