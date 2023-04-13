@@ -3,16 +3,16 @@ package impl;
 import action.ProductAction;
 
 public class Product implements ProductAction {
-    int id;
-    String name;
-    int UPC;
-    String manufacturer;
-    int price;
-    String shelfLife;
-    int amount;
-    Location location;
+    private int id;
+    private String name;
+    private int UPC;
+    private String manufacturer;
+    private float price;
+    private String shelfLife;
+    private int amount;
+    private Location location;
 
-    public Product(int id, String name, int UPC, String manufacturer, int price, String shelfLife, int amount){
+    public Product(int id, String name, int UPC, String manufacturer, float price, String shelfLife, int amount){
         this.id = id;
         this.name = name;
         this.UPC = UPC;
@@ -79,7 +79,7 @@ public class Product implements ProductAction {
     }
 
     @Override
-    public int getPrice() {
+    public float getPrice() {
         return price;
     }
 
@@ -91,6 +91,10 @@ public class Product implements ProductAction {
     @Override
     public int getAmount() {
         return amount;
+    }
+
+    public Location getLocation() {
+        return location;
     }
 
     @Override
@@ -109,9 +113,10 @@ public class Product implements ProductAction {
 
     @Override
     public String toString(){
-        return "______________________________________________\n" +
-                "Product: " + this.getName() + "\n From: " + getManufacturer() +
+        return "\n______________________________________________\n" +
+                "Product: " + this.getName() + "\nFrom: " + getManufacturer() +
                 "\nId: " + this.getId() + "\nUPC: " + this.getUPC() + "\nShelf life : till " + this.getShelfLife() +
-                "\nAmount: " + this.getAmount() + "\nPrice per unit: " + this.getPrice() + " byn";
+                "\nAmount: " + this.getAmount() + "\nPrice per unit: " + this.getPrice() + " byn" +
+                "\nLocation:" + this.getLocation();
     }
 }

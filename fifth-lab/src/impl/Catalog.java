@@ -1,4 +1,4 @@
-package Entity;
+package impl;
 
 import action.CatalogAction;
 import impl.Product;

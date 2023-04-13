@@ -12,7 +12,7 @@ public interface ProductAction {
     public String getName();
     public int getUPC();
     public String getManufacturer();
-    public int getPrice();
+    public float getPrice();
     public String getShelfLife();
     public int getAmount();
     public void moveToStorage();
