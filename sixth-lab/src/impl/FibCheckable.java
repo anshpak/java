@@ -2,5 +2,5 @@ package impl;
 
 @FunctionalInterface
 public interface FibCheckable {
-    boolean isFib(int n);
+    public boolean isFib(int n);
 }
