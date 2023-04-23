@@ -1,12 +1,9 @@
 package main;
 
-import java.io.BufferedReader;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 public class Main {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         String inputFileName = "src/files/data.txt";
         int n = 0;
         String line = "";
@@ -42,5 +39,29 @@ public class Main {
                 trMatrix[j][i] = matrix[i][j];
             }
         }
+        reader.close();
+        String outputFileName = "src/files/res.txt";
+        BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName, false));
+        writer.write("Initial matrix:\n");
+        for (i = 0; i < n; i++) {
+            String matrixLine = "";
+            for (int j = 0; j < n; j++) {
+                matrixLine += matrix[i][j];
+                matrixLine += " ";
+            }
+            matrixLine += "\n";
+            writer.write(matrixLine);
+        }
+        writer.write("Transposed matrix:\n");
+        for (i = 0; i < n; i++) {
+            String matrixLine = "";
+            for (int j = 0; j < n; j++) {
+                matrixLine += trMatrix[i][j];
+                matrixLine += " ";
+            }
+            matrixLine += "\n";
+            writer.write(matrixLine);
+        }
+        writer.close();
     }
 }
