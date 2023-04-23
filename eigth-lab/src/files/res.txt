@@ -3,3 +3,6 @@ Initial matrix:
 2 4 6 
 2 8 3 
 Transposed matrix:
+1 2 2 
+3 4 8 
+5 6 3 
