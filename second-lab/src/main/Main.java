@@ -7,7 +7,6 @@ import array.intArray;
 
 public class Main {
     public static void main(String[] args) throws IOException{
-
         ArrayProcessing action = new ArrayProcessing();
 
         FileInputStream sizeFileIn = new FileInputStream("src/files/sizes.txt");
@@ -42,5 +41,6 @@ public class Main {
             }
         }
         System.out.print(count);
+
     }
 }

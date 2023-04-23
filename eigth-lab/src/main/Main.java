@@ -1,5 +1,8 @@
 package main;
 
+import action.MatrixAction;
+import output.MatrixOutput;
+
 import java.io.*;
 
 public class Main {
@@ -32,36 +35,20 @@ public class Main {
         }
         catch (IOException e) {
             e.printStackTrace();
+            reader.close();
         }
-        int[][] trMatrix = new int[n][n];
-        for (i = 0; i < n; i++) {
-            for (int j = 0; j < n; j++) {
-                trMatrix[j][i] = matrix[i][j];
-            }
+        finally {
+            reader.close();
         }
-        reader.close();
+
+        int[][] trMatrix = MatrixAction.transpose(matrix);
+
         String outputFileName = "src/files/res.txt";
         BufferedWriter writer = new BufferedWriter(new FileWriter(outputFileName, false));
         writer.write("Initial matrix:\n");
-        for (i = 0; i < n; i++) {
-            String matrixLine = "";
-            for (int j = 0; j < n; j++) {
-                matrixLine += matrix[i][j];
-                matrixLine += " ";
-            }
-            matrixLine += "\n";
-            writer.write(matrixLine);
-        }
+        MatrixOutput.writeToFile(matrix, writer);
         writer.write("Transposed matrix:\n");
-        for (i = 0; i < n; i++) {
-            String matrixLine = "";
-            for (int j = 0; j < n; j++) {
-                matrixLine += trMatrix[i][j];
-                matrixLine += " ";
-            }
-            matrixLine += "\n";
-            writer.write(matrixLine);
-        }
+        MatrixOutput.writeToFile(trMatrix, writer);
         writer.close();
     }
 }
