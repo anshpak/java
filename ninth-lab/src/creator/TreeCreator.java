@@ -8,8 +8,12 @@ import java.util.ArrayList;
 import java.util.TreeMap;
 
 public class TreeCreator {
-    public static void fillTreeWithAbscissa(TreeMap<Integer, Point> tree, ArrayList<Segment> segments) {
-        ArrayList<Point> intersPoints = new ArrayList<>();
+    public static void fillTreeWithAbscissa(TreeMap<Float, Point> tree, ArrayList<Segment> segments) {
+        ArrayList<Point> intersPoints;
         intersPoints = SegmentAction.getIntersectionPoints(segments);
+        for (Point pt: intersPoints
+             ) {
+            tree.put(pt.getX(), pt);
+        }
     }
 }

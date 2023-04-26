@@ -29,7 +29,7 @@ public class SegmentAction {
         float x4 = seg2.getP2().getX();
         float y4 = seg2.getP2().getY();
         float x = ((x1 * y2 - y1 * x2) * (x3 - x4) - (x1 - x2) * (x3 * y4 - y3 * x4)) / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4));
-        float y = ((x1 * y2 - y1 * x2) * (x3 - x4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4));
+        float y = ((x1 * y2 - y1 * x2) * (y3 - y4) - (y1 - y2) * (x3 * y4 - y3 * x4)) / ((x1 - x2) * (y3 - y4) - (y1 - y2) * (x3 - x4));
         return new Point(x, y);
     }
 
