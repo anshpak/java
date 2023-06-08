@@ -61,7 +61,7 @@ public class MatrixCreator {
             line = reader.readLine();
             n = line.split(" ").length;
         }
-        catch (IOException e) {
+        catch (Exception e) {
             System.out.print(e.getMessage());
             System.exit(0);
         }
